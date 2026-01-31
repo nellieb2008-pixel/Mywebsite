@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            height: 3000px;
+            padding-top: 60px;
+        }
+
+        .div1 {
+            position: relative;
+            width: 300px;
+            margin-left: 25px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            z-index: 10;
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .div2 {
+            position: relative;
+        }
+
+        .ticket {
+            background-color: black;
+            color: white;
+            font-weight: 500;
+            position: absolute;
+            right: 0;
+            top: 20px;
+            padding: 4px 6px 4px 6px;
+        }
+
+        .cart {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            /* Pour Safari */
+        }
+
+        .toolkit {
+            position: absolute;
+            top: 10px;
+            right: -90px;
+            background-color: rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .div2:hover .toolkit {
+            opacity: 1;
+        }
+
+        .primary-head {
+            display: inline-block;
+            border-style: solid;
+            border-color: white;
+            padding: 5px 10px 5px 10px;
+            margin-left: 0px;
+            margin-right: 0px;
+            position: relative;
+        }
+
+        .primary-head:hover .sublist {
+            display: block;
+        }
+
+        .header ul {
+            list-style-type: none;
+            /* Enlève les puces */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /* Aligne les éléments du menu horizontalement */
+        }
+
+        .sublist {
+            position: absolute;
+            z-index: 300;
+            background-color: black;
+            bottom: -60px;
+            left: 0;
+            float: left;
+            display: none;
+        }
+
+        .secondary-head {
+            padding: 0;
+        }
+
+        .sublist:hover {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <img src="11.jpg" style="width: 100%;">
+        <div class="ticket">20% OFF</div>
+        <div class="cart">
+            <button
+                style="background-color: white; color:black; border: solid;border-width: 1px;border-color: black;">Add
+                to Cart</button>
+        </div>
+
+    </div>
+    <div class="div2" style="background-color: red; width: 200px; height: 200px;">Div2
+        <div class="toolkit">My toolkit</div>
+    </div>
+    <div class="header">
+        <ul>
+            <li class="primary-head">Actualités
+                <div class="sublist">
+                    <ul>
+                        <li class="secondary-head">France</li>
+                        <li class="secondary-head">Maroc</li>
+                        <li class="secondary-head">L'Europe</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="primary-head">Sports</li>
+            <li class="primary-head">Crimes</li>
+            <li class="primary-head">Economie</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

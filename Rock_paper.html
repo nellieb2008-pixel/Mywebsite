@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<script>
+    function deviner() {
+        const numChanceux = Math.random();
+        if (numChanceux <= 1 / 3) {
+            return 'Rock';
+        }
+        else if (1 / 3 < numChanceux && numChanceux <= 2 / 3) {
+            return 'Paper';
+        }
+        else return 'Scissors';
+    }
+    function quiGagne(choix1, choix2) {
+        if (choix1 == choix2) {
+            alert(`C'est un match nul, tu'as choisi ${choix1}, et le computer aussi`);
+        }
+        else if (choix1 == 'Rock') {
+            if (choix2 == 'Paper') {
+                alert(`Vous avez perdu! vous avez choisi ${choix1}, et le computer a choisi ${choix2}`);
+            }
+            else if (choix2 == 'Scissors') {
+                alert(`Vous avez Gagné! vous avez choisi ${choix1}, et le computer a choisi ${choix2}`);
+            }
+        }
+        else if (choix1 == 'Paper') {
+            if (choix2 == 'Scissors') {
+                alert(`Vous avez perdu! vous avez choisi ${choix1}, et le computer a choisi ${choix2}`);
+            }
+            else if (choix2 == 'Rock') {
+                alert(`Vous avez Gagné! vous avez choisi ${choix1}, et le computer a choisi ${choix2}`);
+            }
+        }
+        else if (choix1 == 'Scissors') {
+            if (choix2 == 'Rock') {
+                alert(`Vous avez perdu! vous avez choisi ${choix1}, et le computer a choisi ${choix2}`);
+            }
+            else if (choix2 == 'Paper') {
+                alert(`Vous avez Gagné! vous avez choisi ${choix1}, et le computer a choisi ${choix2}`);
+            }
+        }
+    }
+</script>
+
+<body>
+    <p>Rock Paper Scissors</p>
+    <button onclick="quiGagne('Rock',deviner())">Rock</button>
+    <button onclick="quiGagne('Paper',deviner())">Paper</button>
+    <button onclick="quiGagne('Scissors',deviner())">Scissors</button>
+</body>
+
+
+
+</html>
